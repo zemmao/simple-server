@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web:
+    image: zemmao/node-web-app
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+    ports:
+      - "49160:8080"
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8081:8080"
+    
